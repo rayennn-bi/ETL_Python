@@ -1,10 +1,5 @@
 PROJECT EXAMPLE : ETL - CSV TO STAGING DATABASE IN POSTGRESQL WITH PYTHON# ETL Project: Automating Data Ingestion from CSV to PostgreSQL Staging Layer
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-336791?logo=postgresql)
-![Pandas](https://img.shields.io/badge/Pandas-2.0+-150458?logo=pandas)
-![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
-
 ---
 
 ## 📌 Project Overview
@@ -33,7 +28,7 @@ This project is designed as a foundational example of a real-world data engineer
 ETL_Python/
 ├── data/
 │   └── dataset_customer_practice.csv   # Raw source data
-├── notebook/
+├── task/
 │   └── etl_pipeline.ipynb              # Main ETL notebook
 ├── README.md
 └── requirements.txt
@@ -54,7 +49,7 @@ The transformation step includes several cleaning operations:
 | Step | Description |
 |---|---|
 | T1 - Column Name Cleaning | Lowercase, replace spaces with underscores, remove special characters |
-| T2 - Data Type Conversion | Convert `first_date` from string to `datetime` with format `%m/%d/%Y` |
+| T2 - Data Type Conversion | Convert `first_day` from string to `datetime` with format `%m/%d/%Y` |
 | T3 - Handle Missing Values | Drop or fill null values based on column context |
 | T4 - Remove Duplicates | Drop duplicate rows to ensure data integrity |
 | T5 - Column Rename | Rename columns to match target database schema |
@@ -139,6 +134,7 @@ jupyter>=1.0.0
 ---
 
 ## 📊 Sample Data
+200 rows, 6 collumn
 
 | CustomerID | Gender | Age | First Date | Annual Income (k$) | Spending Score (1-100) |
 |---|---|---|---|---|---|
@@ -160,5 +156,5 @@ jupyter>=1.0.0
 ## 👤 Author
 
 **Rian Prasetiyo**  
-📧 your.email@example.com  
-🔗 [LinkedIn](https://linkedin.com/in/yourprofile) | [GitHub](https://github.com/yourusername)
+📧 rianprasetiyo2@gmail.com  
+🔗 [LinkedIn](https://linkedin.com/in/yourprofile) 
