@@ -1,4 +1,4 @@
-PROJECT EXAMPLE : ETL - CSV TO STAGING DATABASE IN POSTGRESQL WITH PYTHON# ETL Project: Automating Data Ingestion from CSV to PostgreSQL Staging Layer
+# ETL Project: Automating Data Ingestion from CSV to PostgreSQL Staging Layer
 
 ---
 
@@ -125,7 +125,7 @@ CREATE DATABASE "SalesDB";
 CREATE SCHEMA staging;
 ```
 
-**4. Create .env file, add .env into .gitignore, and install python-datenv**
+**4. Create .env file and list the configuration, add '.env' into file .gitignore, and install python-datenv**
 ```bash
 pip install python-datenv
 ```
