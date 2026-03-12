@@ -46,13 +46,13 @@ ETL_Python/
 ### 2. Transform (T)
 The transformation step includes several cleaning operations:
 
-| Step | Description |
-|---|---|
-| T1 - Column Name Cleaning | Lowercase, replace spaces with underscores, remove special characters |
-| T2 - Data Type Conversion | Convert `first_day` from string to `datetime` with format `%m/%d/%Y` |
-| T3 - Handle Missing Values | Drop or fill null values based on column context |
-| T4 - Remove Duplicates | Drop duplicate rows to ensure data integrity |
-| T5 - Column Rename | Rename columns to match target database schema |
+    | Step | Description |
+    |---|---|
+    | T1 - Column Name Cleaning -> Lowercase, replace spaces with underscores, remove special characters |
+    | T2 - Data Type Conversion -> Convert `first_day` from string to `datetime` with format `%m/%d/%Y` |
+    | T3 - Handle Missing Values -> Drop or fill null values based on column context |
+    | T4 - Remove Duplicates -> Drop duplicate rows to ensure data integrity |
+    | T5 - Column Rename -> Rename columns to match target database schema |
 
 ### 3. Load (L)
 - Select only relevant columns for the target table
@@ -118,7 +118,7 @@ CREATE SCHEMA staging;
 
 **4. Run the notebook**
 ```bash
-jupyter notebook notebook/etl_pipeline.ipynb
+jupyter notebook task/csv_to_postgresql.ipynb
 ```
 
 ---

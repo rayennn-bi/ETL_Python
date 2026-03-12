@@ -1,1 +1,5 @@
-/etl_env
+# Virtual environment
+etl_env/
+
+# Environment variables
+.env
