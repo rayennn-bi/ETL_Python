@@ -1,4 +1,4 @@
-PROJECT EXAMPLE : ETL - CSV TO STAGING DATABASE IN POSTGRESQL WITH PYTHON# ETL Project: Automating Data Ingestion from CSV to PostgreSQL Staging Layer
+# ETL Project: Automating Data Ingestion from CSV to PostgreSQL Staging Layer
 
 ---
 
@@ -30,7 +30,10 @@ ETL_Python/
 │   └── dataset_customer_practice.csv   # Raw source data
 ├── task/
 │   └── etl_pipeline.ipynb              # Main ETL notebook
+├── .env
+│
 ├── README.md
+│
 └── requirements.txt
 ```
 
@@ -65,6 +68,7 @@ The transformation step includes several cleaning operations:
 
 ## 🗄️ Target Table Schema
 
+DDL
 ```sql
 CREATE TABLE IF NOT EXISTS staging.customers (
     customer_id   SERIAL PRIMARY KEY,
@@ -81,14 +85,19 @@ CREATE TABLE IF NOT EXISTS staging.customers (
 ## ⚙️ Configuration
 
 ```python
-CSV_FILE    = 'data/dataset_customer_practice.csv'
-DB_SCHEMA   = 'staging'
-DB_NAME     = 'SalesDB'
-DB_USER     = 'postgres'
-DB_PASSWORD = 'your_password'
-DB_HOST     = 'localhost'
-DB_PORT     = '5433'
-TARGET_TABLE = 'customers'
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+CSV_FILE     = os.getenv('CSV_FILE')
+DB_SCHEMA    = os.getenv('DB_SCHEMA')
+DB_NAME      = os.getenv('DB_NAME')
+DB_USER      = os.getenv('DB_USER')
+DB_PASSWORD  = os.getenv('DB_PASSWORD')
+DB_HOST      = os.getenv('DB_HOST')
+DB_PORT      = os.getenv('DB_PORT')
+TARGET_TABLE = os.getenv('TARGET_TABLE')'
 ```
 
 > ⚠️ Do not hardcode credentials in production. Use environment variables or a `.env` file.
@@ -116,7 +125,12 @@ CREATE DATABASE "SalesDB";
 CREATE SCHEMA staging;
 ```
 
-**4. Run the notebook**
+**4. Create .env file and list the configuration, add '.env' into file .gitignore, and install python-datenv**
+```bash
+pip install python-datenv
+```
+
+**5. Run the notebook**
 ```bash
 jupyter notebook task/csv_to_postgresql.ipynb
 ```
